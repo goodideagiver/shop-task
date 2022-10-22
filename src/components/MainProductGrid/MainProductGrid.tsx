@@ -7,6 +7,7 @@ type Product = {
   price: number
   slug: string
   image: string
+  id: string
 }
 
 type Props = {
@@ -25,6 +26,7 @@ export const MainProductGrid = ({ products }: Props) => {
           name={product.name}
           price={product.price}
           slug={product.slug}
+          id={product.id}
         />
       ))}
     </div>

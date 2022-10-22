@@ -10,9 +10,11 @@ type Props = {
 export const Layout = ({ children }: Props) => {
   return (
     <>
-      <MainHeader />
-      {children}
-      <Footer />
+      <div className={classes.root}>
+        <MainHeader />
+        <main className={classes.main}>{children}</main>
+        <Footer />
+      </div>
     </>
   )
 }

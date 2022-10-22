@@ -16,7 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - [x] Product list
 - [ ] Search products by name
-- [ ] Single product page
+- [x] Single product page
 - [ ] Add product to cart
 - [ ] Remove product from cart
 - [ ] Products are summed up in cart
@@ -24,3 +24,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Extra mile tasks
 
 - [ ] Add validation for requests
+- [ ] Add custom 404 page

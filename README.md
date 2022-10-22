@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Goals
 
-- [ ] Product list
+- [x] Product list
 - [ ] Search products by name
 - [ ] Single product page
 - [ ] Add product to cart

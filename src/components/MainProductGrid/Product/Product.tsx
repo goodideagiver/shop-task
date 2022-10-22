@@ -26,7 +26,7 @@ export const Product = ({ image, name, price, slug }: Props) => {
         <h3>{name}</h3>
         <Image src={image} alt={name} width='250`' height='250`' />
         <div className={classes['bottom-section']}>
-          <p>
+          <p className={classes.price}>
             {CURRENCY} {price}
           </p>
           <button

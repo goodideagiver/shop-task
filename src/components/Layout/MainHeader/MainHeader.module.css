@@ -4,4 +4,6 @@
   gap: 1rem;
   justify-content: space-between;
   width: 100%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 }

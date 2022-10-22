@@ -3,7 +3,7 @@ import classes from './MainHeader.module.css'
 
 export const MainHeader = () => {
   return (
-    <header className={`${classes.root} app-width`}>
+    <header className={`app-width ${classes.root}`}>
       <div>
         <Link href='/' passHref>
           <a>

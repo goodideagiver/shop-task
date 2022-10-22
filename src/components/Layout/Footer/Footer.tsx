@@ -25,7 +25,7 @@ export const Footer = () => {
   ))
 
   return (
-    <footer className={classes.root}>
+    <footer className={`${classes.root} app-width`}>
       <h2>Super shop {new Date().getFullYear()}</h2>
       <ul className={classes.list}>{FakeFooterLinks}</ul>
     </footer>

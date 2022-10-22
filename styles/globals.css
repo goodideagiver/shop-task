@@ -21,23 +21,23 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+html {
+  color-scheme: dark;
+}
 
-  body {
-    color: white;
-    background: black;
-  }
+body {
+  color: white;
+  background: #121212;
 }
 
 :root {
   --app-padding: 1rem;
+
+  --item-hover-color: hsl(0, 0%, 10%);
+  --item-hover-shadow: hsla(240, 0%, 0%, 0.4) 0 7px 29px 0;
 }
 
 .app-width {
   max-width: 1900px;
-  margin: 0 auto;
   padding: 0 var(--app-padding);
 }

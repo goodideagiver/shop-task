@@ -1,7 +1,8 @@
 .root {
   padding: 0 var(--app-padding);
   padding-bottom: var(--app-padding);
-  margin-top: 3rem;
+  margin: 0 auto;
+  margin-top: 5rem;
 }
 
 .list {

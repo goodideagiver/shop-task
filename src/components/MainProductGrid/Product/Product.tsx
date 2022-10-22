@@ -20,8 +20,10 @@ export const Product = ({ image, name, price, slug }: Props) => {
     alert('Added to cart NOT IMPLEMENTED YET')
   }
 
+  const itemLink = `/product/${slug}`
+
   return (
-    <Link href={slug || 'placeholder'} passHref>
+    <Link href={itemLink} passHref>
       <a className={classes.root}>
         <h3>{name}</h3>
         <Image src={image} alt={name} width='250`' height='250`' />

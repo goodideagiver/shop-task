@@ -37,9 +37,15 @@ body {
   --item-hover-shadow: hsla(240, 0%, 0%, 0.4) 0 7px 29px 0;
 
   --emphasis-color: hsl(246, 64%, 31%);
+
+  --modal-index: 100;
 }
 
 .app-width {
   max-width: 1900px;
   padding: 0 var(--app-padding);
+}
+
+button {
+  cursor: pointer;
 }

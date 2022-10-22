@@ -1,8 +1,9 @@
-import Image from 'next/image'
 import classes from './MainProductGrid.module.css'
 import { Product } from './Product/Product'
 
-type Product = {
+import { useProductsStore } from '../../store/products-store'
+
+export type Product = {
   name: string
   price: number
   slug: string
@@ -15,7 +16,13 @@ type Props = {
 }
 
 export const MainProductGrid = ({ products }: Props) => {
+  const { setProducts, products: productsStore } = useProductsStore(
+    (state) => state
+  )
+
   if (!products || products.length === 0) return <p>No products found</p>
+
+  if (productsStore.length === 0) setProducts(products)
 
   return (
     <div className={`${classes.root} app-width`}>

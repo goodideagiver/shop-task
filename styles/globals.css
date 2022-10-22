@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -15,12 +21,23 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+html {
+  color-scheme: dark;
+}
+
+body {
+  color: white;
+  background: #121212;
+}
+
+:root {
+  --app-padding: 1rem;
+
+  --item-hover-color: hsl(0, 0%, 10%);
+  --item-hover-shadow: hsla(240, 0%, 0%, 0.4) 0 7px 29px 0;
+}
+
+.app-width {
+  max-width: 1900px;
+  padding: 0 var(--app-padding);
 }

@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Goals
 
 - [x] Product list
-- [ ] Search products by name
+- [x] Search products by name
 - [x] Single product page
 - [x] Add product to cart
 - [x] Remove product from cart
@@ -23,5 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Extra mile tasks
 
+- [ ] Refactoring
+- [ ] Pretty styles
 - [ ] Add validation for requests
 - [ ] Add custom 404 page

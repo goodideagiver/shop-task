@@ -29,7 +29,7 @@ export const SingleProduct = ({
           <p>{description}</p>
         </div>
         <div className={classes['product-actions']}>
-          <p>
+          <p className={classes.price}>
             {CURRENCY} {price}
           </p>
           <AddToCartButton productId={id} />

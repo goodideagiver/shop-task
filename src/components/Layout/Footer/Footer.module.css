@@ -3,6 +3,7 @@
   padding-bottom: var(--app-padding);
   margin: 0 auto;
   margin-top: 5rem;
+  width: 100%;
 }
 
 .list {

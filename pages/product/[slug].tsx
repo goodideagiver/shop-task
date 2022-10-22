@@ -19,7 +19,7 @@ const Product = ({ product }: Props) => {
   const router = useRouter()
   const { slug } = router.query
 
-  const { name, price, image, description } = product
+  const { name, price, image, description, id } = product
 
   return (
     <SingleProduct
@@ -27,6 +27,7 @@ const Product = ({ product }: Props) => {
       image={image}
       name={name}
       price={price}
+      id={id}
     />
   )
 }

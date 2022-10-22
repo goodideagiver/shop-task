@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { CURRENCY } from '../../storeConfig'
+import { AddToCartButton } from '../UI/AddToCartButton/AddToCartButton'
 import classes from './SingleProduct.module.css'
 
 type Props = {
@@ -7,9 +8,16 @@ type Props = {
   price: number
   image: string
   description: string
+  id: string
 }
 
-export const SingleProduct = ({ name, price, image, description }: Props) => {
+export const SingleProduct = ({
+  name,
+  price,
+  image,
+  description,
+  id,
+}: Props) => {
   return (
     <div className={`${classes.root} app-width`}>
       <div>
@@ -24,7 +32,7 @@ export const SingleProduct = ({ name, price, image, description }: Props) => {
           <p>
             {CURRENCY} {price}
           </p>
-          <button>Add to cart</button>
+          <AddToCartButton productId={id} />
         </div>
       </div>
     </div>

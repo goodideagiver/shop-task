@@ -12,6 +12,11 @@
   padding: 1rem 0;
 }
 
+.title {
+  width: fit-content;
+  align-self: flex-start;
+}
+
 .root:hover {
   background-color: var(--item-hover-color);
   box-shadow: var(--item-hover-shadow);
@@ -23,34 +28,6 @@
   object-fit: cover;
   max-width: 100%;
   max-height: 100%;
-}
-
-.cart-btn {
-  background-color: transparent;
-  padding: .5rem;
-  font-size: 1.2rem;
-  border-radius: 50%;
-  aspect-ratio: 1/1;
-  border: 1px white solid;
-  cursor: pointer;
-  color: white;
-  width: 52px;
-  transition: 0.2s;
-}
-
-.cart-btn:hover {
-  background-color: hsl(209, 100%, 50%);
-  border-color: transparent;
-}
-
-.cart-btn:hover span {
-  scale: 1.2;
-}
-
-.cart-btn span {
-  transition: 0.2s;
-  display: grid;
-  place-items: center;
 }
 
 .bottom-section {

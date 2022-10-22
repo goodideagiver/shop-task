@@ -20,3 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] Add product to cart
 - [ ] Remove product from cart
 - [ ] Products are summed up in cart
+
+## Extra mile tasks
+
+- [ ] Add validation for requests

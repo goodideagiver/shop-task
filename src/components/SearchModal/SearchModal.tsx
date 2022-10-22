@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useDebounce } from '../../hooks/useDebounce'
+import { useProductsStore } from '../../store/products-store'
+import { Product } from '../MainProductGrid/MainProductGrid'
 import classes from './SearchModal.module.css'
 import { useIsBrowser } from './useIsBrowser'
 
@@ -10,6 +12,7 @@ type Props = {
 
 export const SearchModal = ({ onClose }: Props) => {
   const [searchInputValue, setSearchInputValue] = useState('')
+  const [foundItems, setFoundItems] = useState<Product[]>([])
   const isBrowser = useIsBrowser()
 
   const itemName = useDebounce(searchInputValue)
@@ -18,10 +21,18 @@ export const SearchModal = ({ onClose }: Props) => {
     setSearchInputValue(event.target.value)
   }
 
+  const products = useProductsStore((state) => state.products)
+
   useEffect(() => {
-    if (itemName.trim().length === 0) return
-    console.log(itemName)
-  }, [itemName])
+    if (itemName.trim().length === 0) {
+      setFoundItems([])
+      return
+    }
+    const productsWithMatchingName = products.filter((product) =>
+      product.name.toLowerCase().includes(itemName.toLowerCase())
+    )
+    setFoundItems(productsWithMatchingName)
+  }, [itemName, products])
 
   if (!isBrowser) return null
 
@@ -50,6 +61,8 @@ export const SearchModal = ({ onClose }: Props) => {
                 <p>Type anything in search field to find items</p>
               </div>
             )}
+            {!!foundItems.length &&
+              foundItems.map((item) => <p key={item.id}>{item.name}</p>)}
           </main>
         </div>
       </div>

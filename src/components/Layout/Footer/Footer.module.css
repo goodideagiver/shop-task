@@ -1,12 +1,12 @@
 .root {
   padding: 0 var(--app-padding);
-  padding-bottom: var(--app-padding);
   margin: 0 auto;
   margin-top: 5rem;
   width: 100%;
 }
 
 .list {
+  padding-bottom: 3rem;
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

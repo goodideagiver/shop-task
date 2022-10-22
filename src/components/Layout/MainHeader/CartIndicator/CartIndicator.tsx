@@ -1,24 +1,24 @@
 import classes from './CartIndicator.module.css'
 
 import { BsCart } from 'react-icons/bs'
-
-const ITEMS_COUNT = 5
+import Link from 'next/link'
+import { useCartStore } from '../../../../store/cart-items'
 
 export const CartIndicator = () => {
-  const cartButtonHandler = () => {
-    alert('Cart button clicked')
-  }
+  const count = useCartStore((state) => state.count)
 
-  const ItemsBadge = ITEMS_COUNT > 0 && (
+  const ItemsBadge = count > 0 && (
     <span className={classes.badge}>
-      <span>{ITEMS_COUNT}</span>
+      <span>{count}</span>
     </span>
   )
 
   return (
-    <button onClick={cartButtonHandler} className={classes.root}>
-      {ItemsBadge}
-      <BsCart style={{ verticalAlign: 'middle', fontSize: '2rem' }} />
-    </button>
+    <Link href='/cart' passHref>
+      <a className={classes.root}>
+        {ItemsBadge}
+        <BsCart style={{ verticalAlign: 'middle', fontSize: '2rem' }} />
+      </a>
+    </Link>
   )
 }

@@ -17,9 +17,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Product list
 - [ ] Search products by name
 - [x] Single product page
-- [ ] Add product to cart
-- [ ] Remove product from cart
-- [ ] Products are summed up in cart
+- [x] Add product to cart
+- [x] Remove product from cart
+- [x] Products are summed up in cart
 
 ## Extra mile tasks
 

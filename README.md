@@ -24,3 +24,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Extra mile tasks
 
 - [ ] Add validation for requests
+- [ ] Add custom 404 page

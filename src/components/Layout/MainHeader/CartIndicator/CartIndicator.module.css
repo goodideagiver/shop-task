@@ -1,0 +1,36 @@
+.root {
+  padding: 1rem;
+  border-radius: 50%;
+  border: 0;
+  background-color: var(--item-hover-color);
+  cursor: pointer;
+  position: relative;
+}
+
+.root:hover {
+  background-color: var(--emphasis-color);
+  box-shadow: var(--item-hover-shadow);
+}
+
+.badge {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, 50%);
+}
+
+.badge span {
+  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--emphasis-color);
+  border-radius: 50%;
+  line-height: .7rem;
+}

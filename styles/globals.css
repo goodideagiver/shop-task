@@ -35,6 +35,8 @@ body {
 
   --item-hover-color: hsl(0, 0%, 10%);
   --item-hover-shadow: hsla(240, 0%, 0%, 0.4) 0 7px 29px 0;
+
+  --emphasis-color: hsl(246, 64%, 31%);
 }
 
 .app-width {

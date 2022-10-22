@@ -3,27 +3,27 @@ import classes from './Footer.module.css'
 const FAKE_FOOTER_LINKS = [
   {
     text: 'About',
-    id: 'about',
+    id: 'aboutve3e',
     href: '#',
   },
   {
     text: 'About',
-    id: 'about',
+    id: 'abous3fgt',
     href: '#',
   },
   {
     text: 'About',
-    id: 'about',
+    id: 'w3f',
     href: '#',
   },
   {
     text: 'About',
-    id: 'about',
+    id: 's3tsfsasd2',
     href: '#',
   },
   {
     text: 'About',
-    id: 'about',
+    id: 'g3wfvfw',
     href: '#',
   },
 ]

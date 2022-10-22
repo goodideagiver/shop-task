@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { CartIndicator } from './CartIndicator/CartIndicator'
 import classes from './MainHeader.module.css'
+import { SearchButton } from './SearchButton/SearchButton'
 
 export const MainHeader = () => {
   return (
@@ -14,11 +15,7 @@ export const MainHeader = () => {
             </a>
           </Link>
         </div>
-        <form>
-          <label htmlFor='product'>Search for products</label>
-          <input id='product' type='text' />
-          <button type='submit'>Search</button>
-        </form>
+        <SearchButton />
         <CartIndicator />
       </div>
     </header>

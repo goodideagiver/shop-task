@@ -1,0 +1,13 @@
+.root {
+  padding: 1rem;
+  border-radius: 50%;
+  border: 0;
+  background-color: var(--item-hover-color);
+  cursor: pointer;
+  position: relative;
+}
+
+.root:hover {
+  background-color: var(--emphasis-color);
+  box-shadow: var(--item-hover-shadow);
+}

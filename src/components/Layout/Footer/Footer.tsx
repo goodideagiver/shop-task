@@ -1,32 +1,43 @@
 import classes from './Footer.module.css'
 
-import { faker } from '@faker-js/faker'
-
-const createRandomLink = () => {
-  return {
-    id: faker.datatype.uuid(),
-    href: faker.internet.url(),
-    text: faker.lorem.words(3),
-  }
-}
-
-const capitalize = (s: string) => {
-  if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1)
-}
-
-const FAKE_FOOTER_LINKS = Array.from({ length: 15 }, createRandomLink)
+const FAKE_FOOTER_LINKS = [
+  {
+    text: 'About',
+    id: 'about',
+    href: '#',
+  },
+  {
+    text: 'About',
+    id: 'about',
+    href: '#',
+  },
+  {
+    text: 'About',
+    id: 'about',
+    href: '#',
+  },
+  {
+    text: 'About',
+    id: 'about',
+    href: '#',
+  },
+  {
+    text: 'About',
+    id: 'about',
+    href: '#',
+  },
+]
 
 export const Footer = () => {
   const FakeFooterLinks = FAKE_FOOTER_LINKS.map((link) => (
     <li key={link.id}>
-      <a href={link.href}>{capitalize(link.text)}</a>
+      <a href={link.href}>{link.text}</a>
     </li>
   ))
 
   return (
     <footer className={`${classes.root} app-width`}>
-      <p>© {new Date().getFullYear()}Super shop</p>
+      <p>© {new Date().getFullYear()} Super shop</p>
       <ul className={classes.list}>{FakeFooterLinks}</ul>
     </footer>
   )

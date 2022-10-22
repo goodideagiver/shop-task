@@ -17,7 +17,7 @@ export const MainProductGrid = ({ products }: Props) => {
   if (!products || products.length === 0) return <p>No products found</p>
 
   return (
-    <div className={classes.root}>
+    <div className={`${classes.root} app-width`}>
       {products.map((product) => (
         <Product
           key={product.slug}

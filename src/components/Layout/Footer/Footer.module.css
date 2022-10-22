@@ -1,0 +1,15 @@
+.root {
+  padding: 0 var(--app-padding);
+  padding-bottom: var(--app-padding);
+  margin-top: 3rem;
+}
+
+.list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 1rem;
+
+  list-style: none;
+}

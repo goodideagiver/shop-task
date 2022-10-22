@@ -31,3 +31,13 @@ a {
     background: black;
   }
 }
+
+:root {
+  --app-padding: 1rem;
+}
+
+.app-width {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 var(--app-padding);
+}

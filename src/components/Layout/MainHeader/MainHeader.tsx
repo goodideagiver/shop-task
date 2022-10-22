@@ -1,9 +1,17 @@
+import Link from 'next/link'
 import classes from './MainHeader.module.css'
 
 export const MainHeader = () => {
   return (
-    <header>
-      <h1>Super shop</h1>
+    <header className={`${classes.root} app-width`}>
+      <div>
+        <Link href='/' passHref>
+          <a>
+            <h1>Super shop</h1>
+            <p>The best shop ever</p>
+          </a>
+        </Link>
+      </div>
       <form>
         <label htmlFor='product'>Search for products</label>
         <input id='product' type='text' />

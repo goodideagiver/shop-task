@@ -5,7 +5,8 @@ import classes from './CartItem.module.css'
 
 import { TbTrashX } from 'react-icons/tb'
 import { HiMinus, HiPlus } from 'react-icons/hi'
-import { useCartStore } from '../../../store/cart-items'
+import { useCartItem } from './useCartItem'
+import { CartItemActions } from './CartItemActions/CartItemActions'
 
 export type Props = {
   img: string
@@ -17,6 +18,8 @@ export type Props = {
   slug: string
 }
 
+const iconStyle = { verticalAlign: 'middle', fontSize: '1.5rem' }
+
 export const CartItem = ({
   id,
   img,
@@ -26,23 +29,26 @@ export const CartItem = ({
   title,
   total,
 }: Props) => {
-  const {
-    removeItem: removeItemById,
-    addOne: addOneItemById,
-    removeOne: removeOneItemById,
-  } = useCartStore((state) => state)
+  const { minusOneItemHandler, plusOneItemHandler, removeItemHandler } =
+    useCartItem(id)
 
-  const removeItemHandler = () => {
-    removeItemById(id)
-  }
-
-  const minusOneItemHandler = () => {
-    removeOneItemById(id)
-  }
-
-  const plusOneItemHandler = () => {
-    addOneItemById(id)
-  }
+  const cartItemActionButtons = [
+    {
+      onClick: plusOneItemHandler,
+      children: <HiPlus style={iconStyle} />,
+      label: 'Add one item',
+    },
+    {
+      onClick: minusOneItemHandler,
+      children: <HiMinus style={iconStyle} />,
+      label: 'Remove one item',
+    },
+    {
+      onClick: removeItemHandler,
+      children: <TbTrashX style={iconStyle} />,
+      label: 'Remove item',
+    },
+  ]
 
   return (
     <li className={classes.root}>
@@ -63,15 +69,7 @@ export const CartItem = ({
         <p>
           Total: {CURRENCY} {total.toFixed(2)}
         </p>
-        <button onClick={plusOneItemHandler} className={classes.button}>
-          <HiPlus style={{ verticalAlign: 'middle', fontSize: '1.5rem' }} />
-        </button>
-        <button onClick={minusOneItemHandler} className={classes.button}>
-          <HiMinus style={{ verticalAlign: 'middle', fontSize: '1.5rem' }} />
-        </button>
-        <button onClick={removeItemHandler} className={classes.button}>
-          <TbTrashX style={{ verticalAlign: 'middle', fontSize: '1.5rem' }} />
-        </button>
+        <CartItemActions buttons={cartItemActionButtons} />
       </div>
     </li>
   )

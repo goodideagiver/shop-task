@@ -4,17 +4,21 @@ import classes from './MainHeader.module.css'
 import { SearchButton } from './SearchButton/SearchButton'
 
 export const MainHeader = () => {
+  const HomepageLink = (
+    <div>
+      <Link href='/' passHref>
+        <a>
+          <h1>Super shop</h1>
+          <p>The best shop ever</p>
+        </a>
+      </Link>
+    </div>
+  )
+
   return (
     <header className={`app-width ${classes.root}`}>
       <div className={classes.root}>
-        <div>
-          <Link href='/' passHref>
-            <a>
-              <h1>Super shop</h1>
-              <p>The best shop ever</p>
-            </a>
-          </Link>
-        </div>
+        {HomepageLink}
         <SearchButton />
         <CartIndicator />
       </div>

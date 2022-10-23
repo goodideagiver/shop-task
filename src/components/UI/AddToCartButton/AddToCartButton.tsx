@@ -9,12 +9,12 @@ type Props = {
 }
 
 export const AddToCartButton = ({ productId }: Props) => {
-  const addItem = useCartStore((state) => state.addOne)
+  const addItemToCartStore = useCartStore((state) => state.addOne)
 
   const cartButtonClickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     event.stopPropagation()
-    addItem(productId)
+    addItemToCartStore(productId)
   }
 
   return (

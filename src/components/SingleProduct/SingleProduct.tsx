@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { CURRENCY } from '../../storeConfig'
 import { AddToCartButton } from '../UI/AddToCartButton/AddToCartButton'
+import { ProductActions } from './ProductActions/ProductActions'
+import { ProductInformation } from './ProductInformation/ProductInformation'
 import classes from './SingleProduct.module.css'
 
 type Props = {
@@ -18,22 +20,18 @@ export const SingleProduct = ({
   description,
   id,
 }: Props) => {
+  const ProductImage = (
+    <div>
+      <Image src={image} width='500' height='500' alt={name} />
+    </div>
+  )
+
   return (
     <div className={`${classes.root} app-width`}>
-      <div>
-        <Image src={image} width='500' height='500' alt={name} />
-      </div>
+      {ProductImage}
       <div className={classes['product-info-wrapper']}>
-        <div className={classes['product-info']}>
-          <h2>{name}</h2>
-          <p>{description}</p>
-        </div>
-        <div className={classes['product-actions']}>
-          <p className={classes.price}>
-            {CURRENCY} {price}
-          </p>
-          <AddToCartButton productId={id} />
-        </div>
+        <ProductInformation description={description} name={name} />
+        <ProductActions price={price} productId={id} />
       </div>
     </div>
   )

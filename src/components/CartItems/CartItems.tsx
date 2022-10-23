@@ -6,6 +6,7 @@ import { CartItem } from './CartItem/CartItem'
 import classes from './CartItems.module.css'
 
 import { BarLoader } from 'react-spinners'
+import { useDebounce } from '../../hooks/useDebounce'
 
 type Item = {
   id: string
@@ -31,9 +32,13 @@ export const CartItems = () => {
     loading: false,
   })
   const { count, items, clearCart } = useCartStore((state) => state)
+  const { count: debouncedCount, items: debouncedItems } = useDebounce(
+    { count, items },
+    500
+  )
 
   useEffect(() => {
-    if (count === 0) return
+    if (debouncedCount === 0) return
 
     const getItems = async () => {
       setItemsState((prevState) => ({ ...prevState, loading: true }))
@@ -53,10 +58,10 @@ export const CartItems = () => {
       const data = await resp.json()
       const products = data.data.products
       const itemsInCart = products.filter((product) => {
-        return items.find((item) => item.id === product.id)
+        return debouncedItems.find((item) => item.id === product.id)
       })
       const itemsWithCount = itemsInCart.map((item) => {
-        const count = items.find((i) => i.id === item.id)?.quantity
+        const count = debouncedItems.find((i) => i.id === item.id)?.quantity
         return { ...item, quantity: count }
       })
 
@@ -68,7 +73,7 @@ export const CartItems = () => {
     }
 
     getItems()
-  }, [count, items])
+  }, [debouncedCount, debouncedItems])
 
   const cartHasItemsToDisplay = count > 0 && !itemsState.loading
 

@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { CURRENCY } from '../../../storeConfig'
 import classes from './CartItem.module.css'
 
-import { TbTrashX } from 'react-icons/tb'
-import { HiMinus, HiPlus } from 'react-icons/hi'
 import { useCartItem } from './useCartItem'
 import { CartItemActions } from './CartItemActions/CartItemActions'
 
@@ -18,8 +16,6 @@ export type Props = {
   slug: string
 }
 
-const iconStyle = { verticalAlign: 'middle', fontSize: '1.5rem' }
-
 export const CartItem = ({
   id,
   img,
@@ -31,24 +27,6 @@ export const CartItem = ({
 }: Props) => {
   const { minusOneItemHandler, plusOneItemHandler, removeItemHandler } =
     useCartItem(id)
-
-  const cartItemActionButtons = [
-    {
-      onClick: plusOneItemHandler,
-      children: <HiPlus style={iconStyle} />,
-      label: 'Add one item',
-    },
-    {
-      onClick: minusOneItemHandler,
-      children: <HiMinus style={iconStyle} />,
-      label: 'Remove one item',
-    },
-    {
-      onClick: removeItemHandler,
-      children: <TbTrashX style={iconStyle} />,
-      label: 'Remove item',
-    },
-  ]
 
   return (
     <li className={classes.root}>
@@ -69,7 +47,11 @@ export const CartItem = ({
         <p>
           Total: {CURRENCY} {total.toFixed(2)}
         </p>
-        <CartItemActions buttons={cartItemActionButtons} />
+        <CartItemActions
+          addItemHandler={plusOneItemHandler}
+          subtractItemHandler={minusOneItemHandler}
+          removeItemHandler={removeItemHandler}
+        />
       </div>
     </li>
   )

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { CURRENCY } from '../../../../storeConfig'
 import { Product } from '../../../MainProductGrid/MainProductGrid'
 import { AddToCartButton } from '../../../UI/AddToCartButton/AddToCartButton'
 import classes from './ResultItem.module.css'
@@ -17,7 +18,9 @@ export const ResultItem = ({ item }: Props) => {
         <a className={classes.link}>
           <Image width='50' height='50' src={image} alt={name} />
           <p>{name}</p>
-          <p>{price}</p>
+          <p>
+            {CURRENCY} {Number(price).toFixed(2)}
+          </p>
           <AddToCartButton productId={id} />
         </a>
       </Link>

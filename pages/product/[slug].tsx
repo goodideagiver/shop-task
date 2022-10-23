@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { SingleProduct } from '../../src/components/SingleProduct/SingleProduct'
 import { getProductsSlugs } from '../api/getProductsSlugs'
 import { getSingleProduct } from '../api/getSingleProduct'

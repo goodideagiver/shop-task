@@ -2,12 +2,14 @@ import classes from './CartIndicator.module.css'
 
 import { BsCart } from 'react-icons/bs'
 import Link from 'next/link'
-import { useCartStore } from '../../../../store/cart-items'
+import { useCartIndicator } from './useCartIndicator'
+
+const iconStyles = { verticalAlign: 'middle', fontSize: '2rem' }
 
 export const CartIndicator = () => {
-  const count = useCartStore((state) => state.count)
+  const { count, hasItemsInCart } = useCartIndicator()
 
-  const ItemsBadge = count > 0 && (
+  const ItemsBadge = hasItemsInCart && (
     <span className={classes.badge}>
       <span>{count}</span>
     </span>
@@ -17,7 +19,7 @@ export const CartIndicator = () => {
     <Link href='/cart' passHref>
       <a className={classes.root}>
         {ItemsBadge}
-        <BsCart style={{ verticalAlign: 'middle', fontSize: '2rem' }} />
+        <BsCart style={iconStyles} />
       </a>
     </Link>
   )

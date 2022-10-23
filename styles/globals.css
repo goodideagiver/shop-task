@@ -27,7 +27,7 @@ html {
 
 body {
   color: white;
-  background: #121212;
+  background: var(--main-bg-color);
 }
 
 :root {
@@ -36,6 +36,7 @@ body {
   --item-hover-color: hsl(0, 0%, 10%);
   --item-hover-shadow: hsla(240, 0%, 0%, 0.4) 0 7px 29px 0;
 
+  --main-bg-color: #121212;
   --emphasis-color: hsl(246, 64%, 31%);
 
   --modal-index: 100;

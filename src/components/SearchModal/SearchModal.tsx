@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useDebounce } from '../../hooks/useDebounce'
-import { useProductsStore } from '../../store/products-store'
-import { Product } from '../MainProductGrid/MainProductGrid'
 import classes from './SearchModal.module.css'
+import { SearchModalHeader } from './SearchModalHeader/SearchModalHeader'
 import { SearchResults } from './SearchResults/SearchResults'
 import { useIsBrowser } from './useIsBrowser'
 import { useSearchModal } from './useSearchModal'
@@ -20,23 +17,14 @@ export const SearchModal = ({ onClose }: Props) => {
 
   return createPortal(
     <>
-      <div className={classes.backdrop} onClick={onClose} />
+      <div className={classes.backdrop} />
       <div className={classes.root}>
         <div className={classes.content}>
-          <header>
-            <label htmlFor='search'>Search items</label>
-            <input
-              id='search'
-              className={classes['search-input']}
-              type='text'
-              placeholder='item name'
-              value={searchInputValue}
-              onChange={searchInputHandler}
-            />
-            <button className={classes.close} onClick={onClose}>
-              Close modal
-            </button>
-          </header>
+          <SearchModalHeader
+            inputChangeHandler={searchInputHandler}
+            inputValue={searchInputValue}
+            onClose={onClose}
+          />
           <SearchResults
             foundItems={foundItems}
             hasNoSearchInput={searchInputValue === ''}

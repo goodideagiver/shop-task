@@ -27,17 +27,14 @@ export const SearchModal = ({ onClose }: Props) => {
 
   useEffect(() => {
     if (itemName.trim().length === 0) {
-      setFoundItems([])
+      if (foundItems.length > 0) setFoundItems([])
       return
     }
     const productsWithMatchingName = products.filter((product) =>
       product.name.toLowerCase().includes(itemName.toLowerCase())
     )
     setFoundItems(productsWithMatchingName)
-    setSearchHasNoResults(
-      foundItems.length === 0 && searchInputValue.trim().length > 0
-    )
-  }, [itemName, products, foundItems, searchHasNoResults, searchInputValue])
+  }, [itemName, products, foundItems.length])
 
   if (!isBrowser) return null
 
@@ -63,7 +60,6 @@ export const SearchModal = ({ onClose }: Props) => {
           <SearchResults
             foundItems={foundItems}
             hasNoSearchInput={searchInputValue === ''}
-            searchHasNoResults={searchHasNoResults}
           />
         </div>
       </div>

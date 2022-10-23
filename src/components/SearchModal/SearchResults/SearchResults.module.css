@@ -1,5 +1,8 @@
 .root {
   height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .message {
@@ -8,4 +11,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.results {
+  list-style: none;
+  overflow: auto;
+  padding: 1rem 0;
 }

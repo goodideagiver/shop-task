@@ -14,7 +14,7 @@ export const ResultItem = ({ item }: Props) => {
   return (
     <li className={classes.root}>
       <Link href={`/product/${slug}`}>
-        <a>
+        <a className={classes.link}>
           <Image width='50' height='50' src={image} alt={name} />
           <p>{name}</p>
           <p>{price}</p>

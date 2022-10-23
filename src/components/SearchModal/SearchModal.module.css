@@ -22,11 +22,13 @@
 }
 
 .content {
-  background-color: var(--item-hover-color);
-  width: min(600px, 95%);
+  background-color: var(--main-bg-color);
+  width: min(1200px, 95%);
   height: min(600px, 80%);
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .content header {

@@ -15,7 +15,6 @@ export const AddToCartButton = ({ productId }: Props) => {
     event.preventDefault()
     event.stopPropagation()
     addItem(productId)
-    console.log('Add to cart button clicked')
   }
 
   return (

@@ -18,17 +18,21 @@ type Props = {
 export const Product = ({ image, name, price, slug, id }: Props) => {
   const itemLink = `/product/${slug}`
 
+  const ProductInfo = (
+    <div>
+      <h3 className={classes.title}>{name}</h3>
+      <p className={classes.price}>
+        {CURRENCY} {price}
+      </p>
+    </div>
+  )
+
   return (
-    <Link href={itemLink} passHref>
+    <Link href={itemLink}>
       <a className={classes.root}>
         <Image src={image} alt={name} width='250`' height='250`' />
         <div className={classes['bottom-section']}>
-          <div>
-            <h3 className={classes.title}>{name}</h3>
-            <p className={classes.price}>
-              {CURRENCY} {price}
-            </p>
-          </div>
+          {ProductInfo}
           <AddToCartButton productId={id} />
         </div>
       </a>

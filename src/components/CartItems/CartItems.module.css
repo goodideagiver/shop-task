@@ -23,6 +23,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.summary > * {
+  flex: 1 1 0;
 }
 
 .buy-button {
@@ -31,6 +36,7 @@
   padding: 1rem 2rem;
   border-radius: 50px;
   font-size: 2rem;
+  flex-grow: 0;
 }
 
 .updating {

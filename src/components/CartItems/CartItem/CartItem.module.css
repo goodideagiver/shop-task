@@ -41,8 +41,7 @@
 }
 
 .info:hover {
-  background-color: var(--item-hover-color);
-  box-shadow: var(--item-hover-shadow);
+  text-decoration: underline;
 }
 
 .actions {

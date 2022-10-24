@@ -31,7 +31,7 @@ export const CartItem = ({
   return (
     <li className={classes.root}>
       <Link href={`product/${slug}`}>
-        <a className={classes.info}>
+        <a className={classes.info} title='Go to item page'>
           <div className={classes['info-inner']}>
             <Image
               className={classes.image}

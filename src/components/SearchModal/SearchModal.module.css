@@ -24,7 +24,8 @@
 .content {
   background-color: var(--main-bg-color);
   width: min(1200px, 95%);
-  height: min(600px, 80%);
+  max-height: 80%;
+  height: min(80%, 1200px);
   display: flex;
   flex-direction: column;
   border-radius: 8px;

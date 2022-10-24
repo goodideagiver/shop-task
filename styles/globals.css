@@ -33,6 +33,14 @@ body {
 :root {
   --app-padding: 1rem;
 
+  --button-bg: transparent;
+  --button-border: 1px solid white;
+  --button-hover-border: 1px solid transparent;
+
+  --button-blue: hsl(209, 100%, 50%);
+
+  --cart-indicator-color: hsl(0, 74%, 43%);
+
   --item-hover-color: hsl(0, 0%, 10%);
   --item-hover-shadow: hsla(240, 0%, 0%, 0.4) 0 7px 29px 0;
 
@@ -59,4 +67,15 @@ button {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.universal-button {
+  background-color: var(--button-bg);
+  border: var(--button-border);
+  transition: 0.2s;
+}
+
+.universal-button:hover {
+  background-color: var(--button-blue);
+  border: var(--button-hover-border);
 }

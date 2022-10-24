@@ -12,19 +12,25 @@ export const SearchResults = ({ foundItems, hasNoSearchInput }: Props) => {
     <p className={classes.message}>Please enter a search term</p>
   )
 
+  const searchHasNoResults = Boolean(
+    foundItems.length === 0 && !hasNoSearchInput
+  )
+
   const NoResultsMessage = <p className={classes.message}>No results</p>
+
+  const ResultList = !hasNoSearchInput && (
+    <ul className={classes.results}>
+      {foundItems.map((item) => (
+        <ResultItem key={item.id} item={item} />
+      ))}
+    </ul>
+  )
 
   return (
     <main className={classes.root}>
       {hasNoSearchInput && NoInputMessage}
-      {foundItems.length === 0 && !hasNoSearchInput && NoResultsMessage}
-      {!hasNoSearchInput && (
-        <ul className={classes.results}>
-          {foundItems.map((item) => (
-            <ResultItem key={item.id} item={item} />
-          ))}
-        </ul>
-      )}
+      {searchHasNoResults && NoResultsMessage}
+      {ResultList}
     </main>
   )
 }

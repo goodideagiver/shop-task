@@ -2,7 +2,7 @@ import classes from './Footer.module.css'
 
 const FAKE_FOOTER_LINKS = [
   {
-    text: 'About',
+    text: 'Home',
     id: 'aboutve3e',
     href: '#',
   },
@@ -12,17 +12,17 @@ const FAKE_FOOTER_LINKS = [
     href: '#',
   },
   {
-    text: 'About',
+    text: 'Learn more',
     id: 'w3f',
     href: '#',
   },
   {
-    text: 'About',
+    text: 'All links in the footer are fake',
     id: 's3tsfsasd2',
     href: '#',
   },
   {
-    text: 'About',
+    text: 'How do you like the footer?',
     id: 'g3wfvfw',
     href: '#',
   },

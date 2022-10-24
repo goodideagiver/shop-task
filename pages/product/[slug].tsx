@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { SingleProduct } from '../../src/components/SingleProduct/SingleProduct'
 import { getProductsSlugs } from '../api/getProductsSlugs'
 import { getSingleProduct } from '../api/getSingleProduct'
@@ -16,9 +15,6 @@ type Props = {
 }
 
 const Product = ({ product }: Props) => {
-  const router = useRouter()
-  const { slug } = router.query
-
   const { name, price, image, description, id } = product
 
   return (
@@ -37,7 +33,7 @@ export const getStaticPaths = async () => {
   const productSlugs = await getProductsSlugs()
 
   return {
-    paths: productSlugs.map((slug) => ({ params: { slug } })),
+    paths: productSlugs.map((slug: string) => ({ params: { slug } })),
     fallback: true,
   }
 }

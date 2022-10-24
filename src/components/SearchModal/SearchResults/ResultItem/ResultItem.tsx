@@ -12,15 +12,23 @@ type Props = {
 export const ResultItem = ({ item }: Props) => {
   const { id, image, name, slug, price } = item
 
+  const ItemInfo = (
+    <>
+      <p>{name}</p>
+      <p>
+        {CURRENCY} {Number(price).toFixed(2)}
+      </p>
+    </>
+  )
+
+  const productPageLink = `/product/${slug}`
+
   return (
     <li className={classes.root}>
-      <Link href={`/product/${slug}`}>
+      <Link href={productPageLink}>
         <a className={classes.link}>
           <Image width='50' height='50' src={image} alt={name} />
-          <p>{name}</p>
-          <p>
-            {CURRENCY} {Number(price).toFixed(2)}
-          </p>
+          {ItemInfo}
           <AddToCartButton productId={id} />
         </a>
       </Link>

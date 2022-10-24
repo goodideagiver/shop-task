@@ -34,16 +34,3 @@
   gap: 1rem;
   align-items: center;
 }
-
-.button {
-  padding: 1rem;
-  border: 0;
-  border-radius: 50%;
-  background-color: var(--item-hover-color);
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: var(--emphasis-color);
-  box-shadow: var(--item-hover-shadow);
-}

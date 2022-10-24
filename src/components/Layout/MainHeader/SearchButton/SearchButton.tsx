@@ -1,19 +1,12 @@
 import classes from './SearchButton.module.css'
 
 import { BsSearch } from 'react-icons/bs'
-import { useState } from 'react'
 import { SearchModal } from '../../../SearchModal/SearchModal'
+import { useSearchButton } from './useSearchButton'
 
 export const SearchButton = () => {
-  const [searchModalOpen, setSearchModalOpen] = useState(false)
-
-  const searchButtonClickHandler = () => {
-    setSearchModalOpen(true)
-  }
-
-  const closeSearchModal = () => {
-    setSearchModalOpen(false)
-  }
+  const { closeSearchModal, searchButtonClickHandler, searchModalOpen } =
+    useSearchButton()
 
   return (
     <>

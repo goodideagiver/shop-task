@@ -2,7 +2,19 @@ import type { NextPage } from 'next'
 import { MainProductGrid } from '../src/components/MainProductGrid/MainProductGrid'
 import { fetchFromStoreApi } from './api/fetchFromStoreApi'
 
-const Home: NextPage = (props) => {
+type Product = {
+  name: string
+  price: number
+  id: string
+  image: string
+  slug: string
+}
+
+type Props = {
+  products: Product[]
+}
+
+const Home: NextPage<Props> = (props) => {
   return <MainProductGrid products={props.products} />
 }
 

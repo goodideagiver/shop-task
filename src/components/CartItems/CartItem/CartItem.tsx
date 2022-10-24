@@ -3,9 +3,8 @@ import Link from 'next/link'
 import { CURRENCY } from '../../../storeConfig'
 import classes from './CartItem.module.css'
 
-import { TbTrashX } from 'react-icons/tb'
-import { HiMinus, HiPlus } from 'react-icons/hi'
-import { useCartStore } from '../../../store/cart-items'
+import { useCartItem } from './useCartItem'
+import { CartItemActions } from './CartItemActions/CartItemActions'
 
 export type Props = {
   img: string
@@ -26,23 +25,8 @@ export const CartItem = ({
   title,
   total,
 }: Props) => {
-  const {
-    removeItem: removeItemById,
-    addOne: addOneItemById,
-    removeOne: removeOneItemById,
-  } = useCartStore((state) => state)
-
-  const removeItemHandler = () => {
-    removeItemById(id)
-  }
-
-  const minusOneItemHandler = () => {
-    removeOneItemById(id)
-  }
-
-  const plusOneItemHandler = () => {
-    addOneItemById(id)
-  }
+  const { minusOneItemHandler, plusOneItemHandler, removeItemHandler } =
+    useCartItem(id)
 
   return (
     <li className={classes.root}>
@@ -63,15 +47,11 @@ export const CartItem = ({
         <p>
           Total: {CURRENCY} {total.toFixed(2)}
         </p>
-        <button onClick={plusOneItemHandler} className={classes.button}>
-          <HiPlus style={{ verticalAlign: 'middle', fontSize: '1.5rem' }} />
-        </button>
-        <button onClick={minusOneItemHandler} className={classes.button}>
-          <HiMinus style={{ verticalAlign: 'middle', fontSize: '1.5rem' }} />
-        </button>
-        <button onClick={removeItemHandler} className={classes.button}>
-          <TbTrashX style={{ verticalAlign: 'middle', fontSize: '1.5rem' }} />
-        </button>
+        <CartItemActions
+          addItemHandler={plusOneItemHandler}
+          subtractItemHandler={minusOneItemHandler}
+          removeItemHandler={removeItemHandler}
+        />
       </div>
     </li>
   )

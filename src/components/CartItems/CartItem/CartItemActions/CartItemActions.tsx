@@ -1,7 +1,8 @@
 import classes from './CartItemActions.module.css'
 
-import { TbTrashX } from 'react-icons/tb'
 import { HiMinus, HiPlus } from 'react-icons/hi'
+import { TbTrashX } from 'react-icons/tb'
+import { useCartItem } from '../useCartItem'
 
 type Button = {
   onClick: () => void
@@ -10,26 +11,23 @@ type Button = {
 }
 
 type Props = {
-  addItemHandler: () => void
-  subtractItemHandler: () => void
-  removeItemHandler: () => void
+  itemID: string
 }
 
 const iconStyle = { verticalAlign: 'middle', fontSize: '1.5rem' }
 
-export const CartItemActions = ({
-  addItemHandler,
-  removeItemHandler,
-  subtractItemHandler,
-}: Props) => {
+export const CartItemActions = ({ itemID }: Props) => {
+  const { minusOneItemHandler, plusOneItemHandler, removeItemHandler } =
+    useCartItem(itemID)
+
   const cartItemActionButtons: Button[] = [
     {
-      onClick: addItemHandler,
+      onClick: plusOneItemHandler,
       children: <HiPlus style={iconStyle} />,
       label: 'Add one item',
     },
     {
-      onClick: subtractItemHandler,
+      onClick: minusOneItemHandler,
       children: <HiMinus style={iconStyle} />,
       label: 'Remove one item',
     },

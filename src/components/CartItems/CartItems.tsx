@@ -25,7 +25,6 @@ export const CartItems = () => {
             id={item.id}
             img={item.image}
             price={Number(item.price)}
-            quantity={item.quantity}
             slug={item.slug}
             title={item.name}
             total={Number(total)}

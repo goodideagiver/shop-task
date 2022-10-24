@@ -32,14 +32,16 @@ export const CartItem = ({
     <li className={classes.root}>
       <Link href={`product/${slug}`}>
         <a className={classes.info}>
-          <Image
-            className={classes.image}
-            src={img}
-            width='100'
-            height='100'
-            alt={title}
-          />
-          <h2>{title}</h2>
+          <div className={classes['info-inner']}>
+            <Image
+              className={classes.image}
+              src={img}
+              width='100'
+              height='100'
+              alt={title}
+            />
+            <h2 className={classes['item-title']}>{title}</h2>
+          </div>
         </a>
       </Link>
       <div className={classes.actions}>

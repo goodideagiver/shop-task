@@ -41,7 +41,7 @@ export const CartItemActions = ({
   ]
 
   return (
-    <>
+    <div className={classes.root}>
       {cartItemActionButtons.map((button) => (
         <button
           key={button.label}
@@ -52,6 +52,6 @@ export const CartItemActions = ({
           {button.children}
         </button>
       ))}
-    </>
+    </div>
   )
 }

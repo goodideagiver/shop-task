@@ -15,24 +15,28 @@ export const SearchModalHeader = ({
 }: Props) => {
   return (
     <header className={classes.root}>
-      <label htmlFor='search'>Search items</label>
+      <label className='sr-only' htmlFor='search'>
+        Search items
+      </label>
       <input
         id='search'
         className={classes['search-input']}
         type='text'
-        placeholder='item name'
+        placeholder='Search items'
         value={inputValue}
         onChange={inputChangeHandler}
       />
-      <button
-        className={classes.close}
-        onClick={onClose}
-        aria-label='close search window'
-      >
-        <VscChromeClose
-          style={{ verticalAlign: 'middle', fontSize: '1.5rem' }}
-        />
-      </button>
+      <div className={classes.controls}>
+        <button
+          className={classes.close}
+          onClick={onClose}
+          aria-label='close search window'
+        >
+          <VscChromeClose
+            style={{ verticalAlign: 'middle', fontSize: '1.5rem' }}
+          />
+        </button>
+      </div>
     </header>
   )
 }

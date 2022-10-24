@@ -1,7 +1,7 @@
 .root {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
   border: 1px transparent solid;
@@ -12,9 +12,14 @@
   padding: 1rem 0;
 }
 
+.root img {
+  border-radius: 8px;
+}
+
 .title {
   width: fit-content;
   align-self: flex-start;
+  margin-bottom: 1rem;
 }
 
 .root:hover {
@@ -31,12 +36,28 @@
 }
 
 .bottom-section {
-  display: flex;
   gap: 1rem;
   justify-content: space-between;
   width: 100%;
+  justify-items: end;
   align-items: center;
   padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 1rem;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .bottom-section button {
+    justify-self: center;
+  }
+
+  .root {
+    gap: 0;
+    padding: 0;
+  }
 }
 
 .price {

@@ -5,3 +5,9 @@
   grid-gap: 2rem;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .root {
+    gap: 1rem;
+  }
+}

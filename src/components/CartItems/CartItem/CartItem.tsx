@@ -19,6 +19,18 @@ export const CartItem = ({ id, img, price, slug, title, total }: Props) => {
   const itemsInCart = useCartStore((state) => state.items)
   const currItemQuantity = itemsInCart.find((item) => item.id === id)?.quantity
 
+  const ItemTotalAndQuantity =
+    currItemQuantity && currItemQuantity > 0 ? (
+      <>
+        <p>Quantity: {currItemQuantity}</p>
+        <p>
+          Total: {CURRENCY} {total.toFixed(2)}
+        </p>
+      </>
+    ) : (
+      <p>No items</p>
+    )
+
   return (
     <li className={classes.root}>
       <Link href={`product/${slug}`}>
@@ -36,10 +48,7 @@ export const CartItem = ({ id, img, price, slug, title, total }: Props) => {
         </a>
       </Link>
       <div className={classes.actions}>
-        <p>Quantity: {currItemQuantity}</p>
-        <p>
-          Total: {CURRENCY} {total.toFixed(2)}
-        </p>
+        {ItemTotalAndQuantity}
         <CartItemActions itemID={id} />
       </div>
     </li>

@@ -17,7 +17,7 @@ export const SearchModal = ({ onClose }: Props) => {
 
   return createPortal(
     <>
-      <div className={classes.backdrop} />
+      <div className={classes.backdrop} onClick={onClose} />
       <div className={classes.root}>
         <div className={classes.content}>
           <SearchModalHeader

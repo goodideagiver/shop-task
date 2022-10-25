@@ -19,6 +19,7 @@ export const SearchModalHeader = ({
         Search items
       </label>
       <input
+        autoFocus
         id='search'
         className={classes['search-input']}
         type='text'

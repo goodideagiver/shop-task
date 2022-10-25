@@ -1,7 +1,7 @@
 import classes from './AddToCartButton.module.css'
 
-import { BsCartPlus } from 'react-icons/bs'
 import { MouseEvent } from 'react'
+import { BsCartPlus } from 'react-icons/bs'
 import { useCartStore } from '../../../store/cart-items'
 
 type Props = {
@@ -18,7 +18,11 @@ export const AddToCartButton = ({ productId }: Props) => {
   }
 
   return (
-    <button onClick={cartButtonClickHandler} className={classes['cart-btn']}>
+    <button
+      title='Add to cart'
+      onClick={cartButtonClickHandler}
+      className={classes['cart-btn']}
+    >
       <span>
         <BsCartPlus />
       </span>

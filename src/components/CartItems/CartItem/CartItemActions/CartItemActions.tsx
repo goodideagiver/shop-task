@@ -42,6 +42,7 @@ export const CartItemActions = ({ itemID }: Props) => {
     <div className={classes.root}>
       {cartItemActionButtons.map((button) => (
         <button
+          title={button.label}
           key={button.label}
           className={classes.button}
           onClick={button.onClick}

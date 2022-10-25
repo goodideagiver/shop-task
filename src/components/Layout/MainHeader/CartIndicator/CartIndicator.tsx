@@ -1,7 +1,7 @@
 import classes from './CartIndicator.module.css'
 
-import { BsCart } from 'react-icons/bs'
 import Link from 'next/link'
+import { BsCart } from 'react-icons/bs'
 import { useCartIndicator } from './useCartIndicator'
 
 const iconStyles = { verticalAlign: 'middle', fontSize: '2rem' }
@@ -19,7 +19,7 @@ export const CartIndicator = () => {
 
   return (
     <Link href='/cart' passHref>
-      <a className={`${classes.root} universal-button`}>
+      <a title='Shopping cart' className={`${classes.root} universal-button`}>
         {ItemsBadge}
         <BsCart style={iconStyles} />
       </a>

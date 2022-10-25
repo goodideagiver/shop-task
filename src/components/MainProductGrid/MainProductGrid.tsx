@@ -26,6 +26,7 @@ export const MainProductGrid = ({ products }: Props) => {
 
   return (
     <div className={`${classes.root} app-width`}>
+      <h2 className='sr-only'>All products</h2>
       {products.map((product) => (
         <Product
           key={product.slug}

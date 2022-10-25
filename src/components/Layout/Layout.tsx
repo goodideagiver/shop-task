@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { ReactNode } from 'react'
 import { Footer } from './Footer/Footer'
 import classes from './Layout.module.css'
@@ -10,6 +11,9 @@ type Props = {
 export const Layout = ({ children }: Props) => {
   return (
     <>
+      <Head>
+        <title>Super shop - best shop ever</title>
+      </Head>
       <div className={classes.root}>
         <MainHeader />
         <main className={classes.main}>{children}</main>

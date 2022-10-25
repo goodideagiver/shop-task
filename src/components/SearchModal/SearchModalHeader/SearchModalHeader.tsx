@@ -29,6 +29,7 @@ export const SearchModalHeader = ({
       />
       <div className={classes.controls}>
         <button
+          title='Close search modal'
           className={`${classes.close} universal-button`}
           onClick={onClose}
           aria-label='close search window'

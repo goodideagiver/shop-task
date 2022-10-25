@@ -11,6 +11,7 @@ export const SearchButton = () => {
   return (
     <>
       <button
+        title='Search products'
         onClick={searchButtonClickHandler}
         className={`${classes.root} universal-button`}
       >

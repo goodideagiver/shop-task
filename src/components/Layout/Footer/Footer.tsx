@@ -37,6 +37,7 @@ export const Footer = () => {
 
   return (
     <footer className={`${classes.root} app-width`}>
+      <h2 className='sr-only'>Footer</h2>
       <p>© {new Date().getFullYear()} Super shop</p>
       <ul className={classes.list}>{FakeFooterLinks}</ul>
     </footer>

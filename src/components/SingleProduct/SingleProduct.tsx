@@ -1,6 +1,5 @@
+import Head from 'next/head'
 import Image from 'next/image'
-import { CURRENCY } from '../../storeConfig'
-import { AddToCartButton } from '../UI/AddToCartButton/AddToCartButton'
 import { ProductActions } from './ProductActions/ProductActions'
 import { ProductInformation } from './ProductInformation/ProductInformation'
 import classes from './SingleProduct.module.css'
@@ -27,12 +26,17 @@ export const SingleProduct = ({
   )
 
   return (
-    <div className={`${classes.root} app-width`}>
-      {ProductImage}
-      <div className={classes['product-info-wrapper']}>
-        <ProductInformation description={description} name={name} />
-        <ProductActions price={price} productId={id} />
+    <>
+      <Head>
+        <title>Super shop - {name}</title>
+      </Head>
+      <div className={`${classes.root} app-width`}>
+        {ProductImage}
+        <div className={classes['product-info-wrapper']}>
+          <ProductInformation description={description} name={name} />
+          <ProductActions price={price} productId={id} />
+        </div>
       </div>
-    </div>
+    </>
   )
 }

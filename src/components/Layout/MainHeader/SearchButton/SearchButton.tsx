@@ -10,7 +10,10 @@ export const SearchButton = () => {
 
   return (
     <>
-      <button onClick={searchButtonClickHandler} className={classes.root}>
+      <button
+        onClick={searchButtonClickHandler}
+        className={`${classes.root} universal-button`}
+      >
         <BsSearch style={{ verticalAlign: 'middle', fontSize: '2rem' }} />
       </button>
       {searchModalOpen && <SearchModal onClose={closeSearchModal} />}

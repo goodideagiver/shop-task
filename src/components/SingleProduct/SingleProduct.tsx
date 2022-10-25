@@ -22,7 +22,7 @@ export const SingleProduct = ({
 }: Props) => {
   const ProductImage = (
     <div>
-      <Image src={image} width='500' height='500' alt={name} />
+      <Image src={image} width='1000' height='1000' alt={name} />
     </div>
   )
 

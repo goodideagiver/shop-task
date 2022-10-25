@@ -19,6 +19,7 @@ export const SearchModalHeader = ({
         Search items
       </label>
       <input
+        autoFocus
         id='search'
         className={classes['search-input']}
         type='text'
@@ -28,7 +29,7 @@ export const SearchModalHeader = ({
       />
       <div className={classes.controls}>
         <button
-          className={classes.close}
+          className={`${classes.close} universal-button`}
           onClick={onClose}
           aria-label='close search window'
         >

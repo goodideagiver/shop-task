@@ -8,8 +8,8 @@ export const MainHeader = () => {
     <div>
       <Link href='/' passHref>
         <a>
-          <h1>Super shop</h1>
-          <p>The best shop ever</p>
+          <h1 className={classes.title}>Super shop</h1>
+          <p className={classes['lower-text']}>The best shop ever</p>
         </a>
       </Link>
     </div>

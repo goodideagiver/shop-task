@@ -11,13 +11,15 @@ export const CartIndicator = () => {
 
   const ItemsBadge = hasItemsInCart && (
     <span className={classes.badge}>
-      <span>{count}</span>
+      <span>
+        <span className={classes.count}>{count}</span>
+      </span>
     </span>
   )
 
   return (
     <Link href='/cart' passHref>
-      <a className={classes.root}>
+      <a className={`${classes.root} universal-button`}>
         {ItemsBadge}
         <BsCart style={iconStyles} />
       </a>

@@ -1,7 +1,8 @@
 .root {
   display: flex;
   gap: 1rem;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .price {

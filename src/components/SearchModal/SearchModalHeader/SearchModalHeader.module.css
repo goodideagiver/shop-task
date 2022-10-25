@@ -24,7 +24,6 @@
 .close {
   padding: 0.8rem;
   border-radius: 50px;
-  border: none;
   flex-basis: auto;
   flex-grow: 0;
 }

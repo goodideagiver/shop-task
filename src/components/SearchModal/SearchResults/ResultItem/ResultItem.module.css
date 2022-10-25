@@ -2,15 +2,31 @@
   margin-bottom: 1rem;
 }
 
+.root img {
+  object-fit: cover;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+
 .link {
   display: grid;
-  grid-template-columns: 10% 50% 10% auto;
+  grid-template-columns: 20% 50% auto;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  gap: 1rem;
 }
 
 .link:hover {
   background-color: var(--item-hover-color);
   box-shadow: var(--item-hover-shadow);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
 }

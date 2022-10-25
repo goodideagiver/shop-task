@@ -1,5 +1,4 @@
 .root {
-  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -10,11 +9,12 @@
 .root img {
   border-radius: 8px;
   justify-self: center;
+  max-height: 80vh;
 }
 
 .product-info-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  justify-content: space-between;
+  justify-content: center;
 }

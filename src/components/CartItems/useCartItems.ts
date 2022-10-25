@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react'
+import { fetchFromStoreApi } from '../../../pages/api/fetchFromStoreApi'
 import { useDebounce } from '../../hooks/useDebounce'
 import { useCartStore } from '../../store/cart-items'
-import { useState, useEffect } from 'react'
-import { fetchFromStoreApi } from '../../../pages/api/fetchFromStoreApi'
 
 export type Item = {
   id: string
@@ -52,7 +52,12 @@ export const useCartItems = () => {
     if (debouncedCount === 0) return
 
     const getItems = async () => {
-      setItemsState((prevState) => ({ ...prevState, loading: true }))
+      let timer = setTimeout(() => {
+        setItemsState((prevState) => ({
+          ...prevState,
+          loading: true,
+        }))
+      }, 500)
 
       const resp = await fetchFromStoreApi(`
         query {
@@ -76,6 +81,7 @@ export const useCartItems = () => {
         return { ...item, quantity: count }
       })
 
+      clearTimeout(timer)
       setItemsState((prevState) => ({
         ...prevState,
         loading: false,

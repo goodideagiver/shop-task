@@ -15,9 +15,12 @@ export const ResultItem = ({ item }: Props) => {
   const ItemInfo = (
     <>
       <p>{name}</p>
-      <p>
-        {CURRENCY} {Number(price).toFixed(2)}
-      </p>
+      <div className={classes.actions}>
+        <p>
+          {CURRENCY} {Number(price).toFixed(2)}
+        </p>
+        <AddToCartButton productId={id} />
+      </div>
     </>
   )
 
@@ -27,9 +30,10 @@ export const ResultItem = ({ item }: Props) => {
     <li className={classes.root}>
       <Link href={productPageLink}>
         <a className={classes.link}>
-          <Image width='50' height='50' src={image} alt={name} />
+          <div>
+            <Image width='80' height='80' src={image} alt={name} />
+          </div>
           {ItemInfo}
-          <AddToCartButton productId={id} />
         </a>
       </Link>
     </li>

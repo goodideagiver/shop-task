@@ -31,18 +31,17 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  text-align: center;
 }
 
 .item-title {
   font-size: 1.8rem;
   font-weight: bold;
-  flex: 1 1 280px;
+  flex: 1 1 130px;
+  text-align: center;
 }
 
 .info:hover {
-  background-color: var(--item-hover-color);
-  box-shadow: var(--item-hover-shadow);
+  text-decoration: underline;
 }
 
 .actions {

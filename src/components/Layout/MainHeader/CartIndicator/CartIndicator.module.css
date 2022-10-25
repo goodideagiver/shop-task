@@ -2,13 +2,15 @@
   padding: 1rem;
   border-radius: 50%;
   border: 0;
-  background-color: var(--item-hover-color);
+  background-color: transparent;
   cursor: pointer;
   position: relative;
+  border: var(--button-border);
 }
 
 .root:hover {
-  background-color: var(--emphasis-color);
+  border: var(--button-hover-border);
+  background-color: var(--button-blue);
   box-shadow: var(--item-hover-shadow);
 }
 
@@ -24,13 +26,32 @@
   display: grid;
   place-items: center;
   transform: translate(-50%, 50%);
+  animation: appear-badge 0.2s ease-in-out;
 }
 
-.badge span {
+.badge > span {
+  aspect-ratio: 1/1;
   padding: 1rem;
   width: fit-content;
   height: fit-content;
-  background-color: var(--emphasis-color);
+  background-color: var(--cart-indicator-color);
   border-radius: 50%;
-  line-height: .7rem;
+}
+
+.count {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+
+@keyframes appear-badge {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 50%) scale(1);
+  }
 }

@@ -43,7 +43,7 @@ export const CartItem = ({ id, img, price, slug, title, total }: Props) => {
               height='100'
               alt={title}
             />
-            <h2 className={classes['item-title']}>{title}</h2>
+            <h3 className={classes['item-title']}>{title}</h3>
           </div>
         </a>
       </Link>

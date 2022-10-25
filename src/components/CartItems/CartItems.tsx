@@ -16,22 +16,25 @@ export const CartItems = () => {
   } = useCartItems()
 
   const ItemsList = cartHasItemsToDisplay && (
-    <ul className={classes.list}>
-      {itemsState.items.map((item) => {
-        const total = item.price * item.quantity
-        return (
-          <CartItem
-            key={item.id}
-            id={item.id}
-            img={item.image}
-            price={Number(item.price)}
-            slug={item.slug}
-            title={item.name}
-            total={Number(total)}
-          />
-        )
-      })}
-    </ul>
+    <>
+      <h2 className='sr-only'>Cart items</h2>
+      <ul className={classes.list}>
+        {itemsState.items.map((item) => {
+          const total = item.price * item.quantity
+          return (
+            <CartItem
+              key={item.id}
+              id={item.id}
+              img={item.image}
+              price={Number(item.price)}
+              slug={item.slug}
+              title={item.name}
+              total={Number(total)}
+            />
+          )
+        })}
+      </ul>
+    </>
   )
 
   return (

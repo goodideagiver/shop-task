@@ -1,4 +1,5 @@
 import { createPortal } from 'react-dom'
+import { useKeyPress } from '../../hooks/useKeyPress'
 import classes from './SearchModal.module.css'
 import { SearchModalHeader } from './SearchModalHeader/SearchModalHeader'
 import { SearchResults } from './SearchResults/SearchResults'
@@ -13,6 +14,9 @@ export const SearchModal = ({ onClose }: Props) => {
   const { foundItems, searchInputHandler, searchInputValue } = useSearchModal()
 
   const isBrowser = useIsBrowser()
+
+  useKeyPress('Escape', onClose)
+
   if (!isBrowser) return null
 
   return createPortal(
